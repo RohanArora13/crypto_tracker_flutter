@@ -1,6 +1,7 @@
 import 'package:crypto_tracker/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(ProviderScope(child: MyApp()));
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: GoogleFonts.roboto().fontFamily,
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
