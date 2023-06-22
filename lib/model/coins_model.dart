@@ -3,29 +3,26 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-class Coin {
+class Coins {
   String? id;
   String? icon;
   String? name;
   String? symbol;
-  int? rank;
-  double? price;
+  dynamic? rank;
+  dynamic? price;
   dynamic priceBtc;
-  double? volume;
-  double? marketCap;
-  int? availableSupply;
-  int? totalSupply;
+  dynamic? volume;
+  dynamic? marketCap;
+  dynamic? availableSupply;
+  dynamic? totalSupply;
   dynamic? priceChange1h;
   dynamic? priceChange1d;
   dynamic? priceChange1w;
   String? websiteUrl;
   String? twitterUrl;
   List<dynamic>? exp;
-  String? contractAddress;
-  int? decimals;
-  String? redditUrl;
 
-  Coin({
+  Coins({
     this.id,
     this.icon,
     this.name,
@@ -43,34 +40,28 @@ class Coin {
     this.websiteUrl,
     this.twitterUrl,
     this.exp,
-    this.contractAddress,
-    this.decimals,
-    this.redditUrl,
   });
 
-  Coin copyWith({
+  Coins copyWith({
     String? id,
     String? icon,
     String? name,
     String? symbol,
-    int? rank,
-    double? price,
+    dynamic? rank,
+    dynamic? price,
     dynamic? priceBtc,
-    double? volume,
-    double? marketCap,
-    int? availableSupply,
-    int? totalSupply,
+    dynamic? volume,
+    dynamic? marketCap,
+    dynamic? availableSupply,
+    dynamic? totalSupply,
     dynamic? priceChange1h,
     dynamic? priceChange1d,
     dynamic? priceChange1w,
     String? websiteUrl,
     String? twitterUrl,
     List<dynamic>? exp,
-    String? contractAddress,
-    int? decimals,
-    String? redditUrl,
   }) {
-    return Coin(
+    return Coins(
       id: id ?? this.id,
       icon: icon ?? this.icon,
       name: name ?? this.name,
@@ -88,9 +79,6 @@ class Coin {
       websiteUrl: websiteUrl ?? this.websiteUrl,
       twitterUrl: twitterUrl ?? this.twitterUrl,
       exp: exp ?? this.exp,
-      contractAddress: contractAddress ?? this.contractAddress,
-      decimals: decimals ?? this.decimals,
-      redditUrl: redditUrl ?? this.redditUrl,
     );
   }
 
@@ -113,27 +101,25 @@ class Coin {
       'websiteUrl': websiteUrl,
       'twitterUrl': twitterUrl,
       'exp': exp,
-      'contractAddress': contractAddress,
-      'decimals': decimals,
-      'redditUrl': redditUrl,
     };
   }
 
-  factory Coin.fromMap(Map<String, dynamic> map) {
-    return Coin(
+  factory Coins.fromMap(Map<String, dynamic> map) {
+    return Coins(
       id: map['id'] != null ? map['id'] as String : null,
       icon: map['icon'] != null ? map['icon'] as String : null,
       name: map['name'] != null ? map['name'] as String : null,
       symbol: map['symbol'] != null ? map['symbol'] as String : null,
-      rank: map['rank'] != null ? map['rank'] as int : null,
-      price: map['price'] != null ? map['price'] as double : null,
+      rank: map['rank'] != null ? map['rank'] as dynamic : null,
+      price: map['price'] != null ? map['price'] as dynamic : null,
       priceBtc: map['priceBtc'] as dynamic,
-      volume: map['volume'] != null ? map['volume'] as double : null,
-      marketCap: map['marketCap'] != null ? map['marketCap'] as double : null,
-      availableSupply:
-          map['availableSupply'] != null ? map['availableSupply'] as int : null,
+      volume: map['volume'] != null ? map['volume'] as dynamic : null,
+      marketCap: map['marketCap'] != null ? map['marketCap'] as dynamic : null,
+      availableSupply: map['availableSupply'] != null
+          ? map['availableSupply'] as dynamic
+          : null,
       totalSupply:
-          map['totalSupply'] != null ? map['totalSupply'] as int : null,
+          map['totalSupply'] != null ? map['totalSupply'] as dynamic : null,
       priceChange1h:
           map['priceChange1h'] != null ? map['priceChange1h'] as dynamic : null,
       priceChange1d:
@@ -147,26 +133,21 @@ class Coin {
       exp: map['exp'] != null
           ? List<dynamic>.from((map['exp'] as List<dynamic>))
           : null,
-      contractAddress: map['contractAddress'] != null
-          ? map['contractAddress'] as String
-          : null,
-      decimals: map['decimals'] != null ? map['decimals'] as int : null,
-      redditUrl: map['redditUrl'] != null ? map['redditUrl'] as String : null,
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Coin.fromJson(String source) =>
-      Coin.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Coins.fromJson(String source) =>
+      Coins.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
-    return 'Coin(id: $id, icon: $icon, name: $name, symbol: $symbol, rank: $rank, price: $price, priceBtc: $priceBtc, volume: $volume, marketCap: $marketCap, availableSupply: $availableSupply, totalSupply: $totalSupply, priceChange1h: $priceChange1h, priceChange1d: $priceChange1d, priceChange1w: $priceChange1w, websiteUrl: $websiteUrl, twitterUrl: $twitterUrl, exp: $exp, contractAddress: $contractAddress, decimals: $decimals, redditUrl: $redditUrl)';
+    return 'Coins(id: $id, icon: $icon, name: $name, symbol: $symbol, rank: $rank, price: $price, priceBtc: $priceBtc, volume: $volume, marketCap: $marketCap, availableSupply: $availableSupply, totalSupply: $totalSupply, priceChange1h: $priceChange1h, priceChange1d: $priceChange1d, priceChange1w: $priceChange1w, websiteUrl: $websiteUrl, twitterUrl: $twitterUrl, exp: $exp)';
   }
 
   @override
-  bool operator ==(covariant Coin other) {
+  bool operator ==(covariant Coins other) {
     if (identical(this, other)) return true;
 
     return other.id == id &&
@@ -185,10 +166,7 @@ class Coin {
         other.priceChange1w == priceChange1w &&
         other.websiteUrl == websiteUrl &&
         other.twitterUrl == twitterUrl &&
-        listEquals(other.exp, exp) &&
-        other.contractAddress == contractAddress &&
-        other.decimals == decimals &&
-        other.redditUrl == redditUrl;
+        listEquals(other.exp, exp);
   }
 
   @override
@@ -209,9 +187,6 @@ class Coin {
         priceChange1w.hashCode ^
         websiteUrl.hashCode ^
         twitterUrl.hashCode ^
-        exp.hashCode ^
-        contractAddress.hashCode ^
-        decimals.hashCode ^
-        redditUrl.hashCode;
+        exp.hashCode;
   }
 }
