@@ -25,7 +25,7 @@
 ## 📱 Screenshots #
 
 </a>
-<img src="https://i.imgur.com/tiK1Ba9.png" >
+<img src="https://github.com/RohanArora13/crypto_tracker_flutter/blob/master/banner_1.png?raw=true" >
 </a>
 
 <h2 align="center">
