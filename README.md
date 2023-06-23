@@ -47,7 +47,7 @@ thanks to https://coinstats.app/ for providing Free API
 
 
 ## 🤝 Show Some Support #
-###### If you 👍 the project, do not forget ⭐️ me Stay tuned for the latest updates [Follow me](https://github.com/sagarshende23) 🤙
+###### If you 👍 the project, do not forget ⭐️ me Stay tuned for the latest updates [Follow me](https://github.com/RohanArora13) 🤙
 
 
 ## 🐛 Bugs/Requests #
